@@ -1,14 +1,14 @@
 PHD
 ===
 
-**NOT COMPLETE**
-
 PHD gives you Passenger-based Heroku-like Deployment.
 
 If you have Passenger installed on a desktop/server, you should be able to:
 
-    $ sudo gem install phd
-    $ sudo phd_server_setup
+    $ git clone git://github.com/remi/phd.git
+    $ cd phd
+    $ sudo ./phd_server_setup
+    $ sudo ln -s /usr/bin/phd /path/to/this/dir/phd  # phd needs to be in your PATH
 
 And then, from another machine, you should be able to:
 
@@ -27,3 +27,10 @@ your Rails/Rack application, set it up on passenger, and run it!
     $ git push my-server master
 
 That's it!  http://myapp.myserver.com should work (assuming you setup the DNS)
+
+PushAnd
+-------
+
+PHD is just 1 tiny script.  [PushAnd][] is what makes all of the git magic work.
+
+[pushand]: http://github.com/remi/pushand
