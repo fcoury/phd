@@ -45,6 +45,11 @@ if [[ -f "$dir/config.ru" ]]; then
 		PHD_APACHE_VIRTUALHOST_TEXT="echo \"$PHD_APACHE_VIRTUALHOST_TEXT\""
 		eval "$PHD_APACHE_VIRTUALHOST_TEXT" > $PHD_APACHE_VIRTUALHOSTS/$host
 		echo 'Application should be configured'
-		eval $PHD_APACHE_RELOAD
+		output=`eval $PHD_APACHE_RELOAD 2>&1`
+		if [[ ! -z "echo $output | grep 'Permission denied'" ]]; then
+			echo "Couldn't reload apache - permission denied"
+		else
+			echo 'Apache reloaded'
+		fi
 	fi
 fi
