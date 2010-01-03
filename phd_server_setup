@@ -4,7 +4,6 @@
 PHD_APACHE_VIRTUALHOSTS='/etc/apache2/phd-sites'
 PHD_APACHE_CONFIG='/etc/apache2/apache2.conf'
 PHD_APACHE_INCLUDE="Include $PHD_APACHE_VIRTUALHOSTS"
-PHD_APACHE_RELOAD='/etc/init.d/apache2 reload'
 PUSHAND_INSTALL_DIR=~/tmp
 
 # read .phdrc (for overrides)
